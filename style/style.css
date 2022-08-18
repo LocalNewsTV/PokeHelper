@@ -1,0 +1,75 @@
+body{
+    background-color: slategray;
+}
+#navbar {
+    z-index: 2;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: rgba(59, 59, 56, .8);
+    border-bottom: 1px solid black;
+}
+#navbar h1 {    
+    font-size: 20px;
+}
+select {width: 120px;}
+#searchMode, #manualMode {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#hamburglarHelper {
+    padding-top: 60px;
+}
+.main, .pokemon, .types, .weakness{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.types, .weakness {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.typeCard{
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 5px; 
+    width: 50px;
+    height: 20px;
+    color: white;
+}
+footer {
+    z-index: 2;
+    height: 40px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: rgba(59, 59, 56, .8);
+    border-top: 1px solid black;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin-left: 15px;
+    padding: 5px;
+    background: rgb(59,59,56);
+    border: 1px solid black;
+}
