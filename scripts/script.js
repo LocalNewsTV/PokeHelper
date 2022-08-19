@@ -57,7 +57,7 @@ const searchPokeMain = async () => {
     const weaknesses = typeMatching(pokeTypes);
     showData(weaknesses);
 }
-$('#searchBar').on('submit', searchPokeMain);
+$('#searchBar').on('click', searchPokeMain);
 $('#searchBar').on('keypress', (e)=>{
     if(e.key === 'Enter')
         searchPokeMain();
