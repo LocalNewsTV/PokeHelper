@@ -1,3 +1,5 @@
+
+const newE = (ele) => document.createElement(ele);
 const getPokeData = async () => {
     try{
         const pokemon = (document.getElementById('searchBar').value).toLowerCase(); 
@@ -12,8 +14,15 @@ const getPokeData = async () => {
 }
 const whoIsIt = (pokeInfo) => {
     const name = pokeInfo.name[0].toUpperCase() + pokeInfo.name.substring(1);
-    console.log('name' + name);
     $('.pokeName').html(`${name}`);
+    const shiny = newE('img');
+    const reg = newE('img');
+    $(shiny).addClass('shinyFront');
+    $(reg).addClass('defaultFront');
+    $(shiny).attr('src', pokeInfo.sprites.front_shiny);
+    $(reg).attr('src', pokeInfo.sprites.front_default);
+    $('.imgCont').html('');
+    $('.imgCont').append(reg, shiny);
 }
 const gatherType = (pokeInfo) => {
     const pokeTypes = []; 
@@ -27,20 +36,18 @@ const typeMatching = (pokeTypes) => {
     pokeTypes.forEach(item => {
         pokeWeakness.push(...pokeTyping[item].weakAgainst)
     })
-    console.log(pokeWeakness);
     return [...new Set(pokeWeakness)];
 }
 const showData = (weaknesses) => {
     $('.weakness').html('');
     $('.weakBanner').html('They are weak to:')
-    const newE = (ele) => document.createElement(ele)
     weaknesses.forEach(item => {
         const cont = newE('div');
         $(cont).addClass('typeCard')
         $(cont).css('background-color', pokeTyping[item.toLowerCase()].color);
         $(cont).html(item);
         $('.weakness').append(cont);
-    })
+    });
 }
 const searchPokeMain = async () => {
     const pokeInfo = await getPokeData();
@@ -49,8 +56,6 @@ const searchPokeMain = async () => {
     const pokeTypes = gatherType(pokeInfo);
     const weaknesses = typeMatching(pokeTypes);
     showData(weaknesses);
-    console.log(weaknesses);
-
 }
 $('#searchBar').on('submit', searchPokeMain);
 $('#searchBar').on('keypress', (e)=>{
