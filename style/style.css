@@ -17,7 +17,9 @@ body{
 }
 #navbar h1 {    
     font-size: 20px;
+    color: white;
 }
+h2{text-align: center;}
 select {width: 120px;}
 #searchMode, #manualMode {
     display: flex;
@@ -38,6 +40,15 @@ select {width: 120px;}
     flex-direction: row;
     flex-wrap: wrap;
 }
+input, button, select{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+input {padding-left: 10px;}
+button {
+    background-color: gray;
+    color: white;
+}
 .typeCard{
     margin: 3px;
     display: flex;
@@ -49,6 +60,16 @@ select {width: 120px;}
     width: 50px;
     height: 20px;
     color: white;
+}
+.pokeTyping {
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+select{
+    text-transform: capitalize;
 }
 footer {
     z-index: 2;
@@ -72,4 +93,34 @@ footer a {
     padding: 5px;
     background: rgb(59,59,56);
     border: 1px solid black;
+}
+@media only screen and (min-width: 800px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #contMain{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 70px;
+        width: 375px;
+        height: 667px;
+        border: 4px solid black;
+        border-radius: 30px;
+        background-color: tan;
+    }
+    #hamburglarHelper, #main {
+        width: 100%;
+    }
+    #hamburglarHelper{
+        padding-top: 30px;
+    }
+    button {
+        background-color: lightgreen;
+        color: black;
+    }
 }

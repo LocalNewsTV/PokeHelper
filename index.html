@@ -13,36 +13,38 @@
     <div id="navbar">
         <h1>Pokemon Weakness Checker</h1>
     </div>
-    <div id="hamburglarHelper">
-        <div id="searchMode">
-            <div>
-                <input type="text" id="searchBar" placeholder="Pokemon...">
-                <button for="searchBar" id="searchBarButt"><i class="bi bi-search"></i></button>
+    <div id="contMain">
+        <div id="hamburglarHelper">
+            <div id="searchMode">
+                <div>
+                    <input type="text" id="searchBar" placeholder="Pokemon...">
+                    <button for="searchBar" id="searchBarButt"><i class="bi bi-search"></i></button>
+                </div>
+                <button class="toggleType">Mode</button>
             </div>
-            <button class="toggleType">Mode</button>
-        </div>
-        <div id="manualMode">
-            <div>
-                <select name="type1" id="typeOne">
-                    <option value="none">none</option>
-                </select>
-                <select name="type2" id="typeTwo">
-                    <option value="none">none</option>
-                </select>
-                <button id="manualButt"><i class="bi bi-search"></i></button>
+            <div id="manualMode">
+                <div>
+                    <select name="type1" id="typeOne">
+                        <option value="none">none</option>
+                    </select>
+                    <select name="type2" id="typeTwo">
+                        <option value="none">none</option>
+                    </select>
+                    <button id="manualButt"><i class="bi bi-search"></i></button>
+                </div>
+                <button class="toggleType">Mode</button>
             </div>
-            <button class="toggleType">Mode</button>
         </div>
-    </div>
-    <div class="main">
-        <div class="pokemon">
-            <h2 class="pokeName"></h2>
-            <div class="imgCont">
+        <div class="main">
+            <div class="pokemon">
+                <h2 class="pokeName"></h2>
+                <div class="imgCont"></div>
+                <div class="pokeTyping"></div>
+                <div class="types"></div>
             </div>
-            <div class="types"></div>
+            <p class="weakBanner"></p>
+            <div class="weakness"></div>
         </div>
-        <p class="weakBanner"></p>
-        <div class="weakness"></div>
     </div>
     <footer>
         <a href="https://localnewstv.github.io/" rel="author">Created By LocalNewsTV</a>
