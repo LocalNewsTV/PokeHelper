@@ -1,5 +1,9 @@
 
 const newE = (ele) => document.createElement(ele);
+/**
+ * @description - pulls pokemon data from the PokeAPI, checks value of input from the searchbar. 
+ * @returns - api data from pokeApi
+ */
 const getPokeData = async () => {
     try{
         const pokemon = ($('#searchBar').val()).toLowerCase();            
@@ -22,6 +26,14 @@ const getPokeData = async () => {
         alert("Invalid response");
     }
 }
+
+/**
+ * 
+ * @param {Array} pokeTypes - Array of 1-2 pokemon types either manually searched for, or from the pokemon object
+ * @param {Array} pokeWeaknesses - raw list of all weaknesses related to the PokeTypes 
+ * @returns {Array} - updated Array holding proper weaknesses of pokemon
+ * @description - Takes list of Pokemon Types and Weaknesses, compares for discrepancies that would negate a weakness (Two type pokemon) and returns an updated array
+ */
 const eliminateStrengths = (pokeTypes, pokeWeaknesses) => {
     const allStrengths = [];
     for(const type in pokeTypes){
@@ -35,11 +47,19 @@ const eliminateStrengths = (pokeTypes, pokeWeaknesses) => {
     }) 
     return filteredItems;
 }
-
+/**
+ * @param {String} warning - String for error messages to post
+ * @description - empties pokemon fields when an invalid pokemon is selected and displays the warning 
+ */
 const notAPokeMon = (warning = 'Invalid Pokemon Requested') => {
     $('.weakness, .weakBanner, .imgCont').html('');
     $('.pokeName').html(warning)
 }
+/**
+ * 
+ * @param {Object} pokeInfo - Object holding data from PokeAPI
+ * @description - Adds all the information pertaining to the searched pokemon, to the DOM
+ */
 const whoIsIt = (pokeInfo) => {
     const name = pokeInfo.name[0].toUpperCase() + pokeInfo.name.substring(1);
     $('.pokeName').html(`${name}`);
@@ -55,6 +75,11 @@ const whoIsIt = (pokeInfo) => {
     showData(pokeType, 'pokeTyping');
     
 }
+/**
+ * @param {Object} pokeInfo - Object holding data from PokeAPI
+ * @returns array of pokemon types
+ * @description - Parses through the PokeAPI information, and appends the types from the searched pokemon
+ */
 const gatherType = (pokeInfo) => {
     const pokeTypes = []; 
     for(const type in pokeInfo.types){
@@ -62,6 +87,11 @@ const gatherType = (pokeInfo) => {
     }
     return pokeTypes;
 }
+/**
+ * @param {Array} pokeTypes - Array of Pokemon's Types  
+ * @returns Array of unique weaknesses
+ * @description - gathers all the Typing that is super effective against the searched pokemons types. then filters duplicate data from the Array 
+ */
 const typeMatching = (pokeTypes) => {
     const pokeWeakness = [];
     pokeTypes.forEach(item => {
@@ -69,6 +99,12 @@ const typeMatching = (pokeTypes) => {
     })
     return [...new Set(pokeWeakness)];
 }
+/**
+ * 
+ * @param {Array} typesListed - an Array of pokemon Types
+ * @param {String} target - location on the DOM to append the element to 
+ * @description - for each element in the array, it appends divs with matching colors to the type
+ */
 const showData = (typesListed, target) => {
     $(`.${target}`).html('');
     $('.weakBanner').html('They are weak to:')
@@ -80,6 +116,9 @@ const showData = (typesListed, target) => {
         $(`.${target}`).append(cont);
     });
 }
+/**
+ * @description - For use with the manual typing search, pulls the selection from both select elements then runs the data through. Also resets the innerHTML on all elements pertaining to the Pokemon search
+ */
 const manualMain = () => {
     const first = $('#typeOne').val(); 
     const second = $('#typeTwo').val();
@@ -95,6 +134,10 @@ const manualMain = () => {
     const finalList = eliminateStrengths(searchTypes, weaknesses)
     showData(finalList, 'weakness')
 }
+/**
+ * @description - the course of action for the pokemon search functioning
+ * If pokemon is invalid, it calls notAPokemon() else it runs thr course
+ */
 const searchPokeMain = async () => {
     const pokeInfo = await getPokeData();
     if(pokeInfo.valueOf() === new String('no').valueOf()){
@@ -107,6 +150,9 @@ const searchPokeMain = async () => {
         showData(finalWeakness, 'weakness');
     }
 }
+/**
+ * @description - Takes all the Key values from the pokeTyping object, and appends them as options to the select bars
+ */
 const fillOptions = () => {
     const typesList = Object.keys(pokeTyping);
     for(const types in typesList){
@@ -119,7 +165,6 @@ const fillOptions = () => {
 $(document).ready(() => {
     fillOptions();
 })
-
 $('#searchBarButt').on('click', searchPokeMain);
 $('#searchBar').on('keypress', (e)=>{
     if(e.key === 'Enter')

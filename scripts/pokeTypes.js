@@ -3,7 +3,8 @@ const pokeTyping = {
         color: '#A6B91A',
         offense: {
             supereffective: ['Dark', 'Grass', 'Psychic'],
-            halfDamage: ['Fighting', 'Fire', 'Flying', 'Ghost', 'Poison', 'Steel'],
+            halfDamage: ['Fighting', 'Fire', 'Dark', 'Flying', 'Ghost', 'Steel', 'Fairy'],
+            noEffect: [],
         },
         defense: {
             supereffective: ['Fire', 'Flying', 'Rock'],
@@ -16,6 +17,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Ghost', 'Psychic'],
             halfDamage: ['Dark', 'Fairy', 'Fighting'],
+            noEffect: [],
         },
         defense: {
             supereffective: ['Bug', 'Fairy', 'Fighting'],
@@ -28,6 +30,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Dragon'],
             halfDamage: ['Steel'],
+            noEffect: ['Fairy'],
         },
         defense: {
             supereffective: ['Dragon', 'Fairy', 'Ice'],
@@ -40,6 +43,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Flying', 'Water'],
             halfDamage: ['Dragon', 'Electric', 'Grass'],
+            noEffect: ['Ground'],
         },
         defense: {
             supereffective: ['Ground'],
@@ -51,7 +55,8 @@ const pokeTyping = {
         color: '#D685AD',
         offense: {
             supereffective: ['Dark', 'Dragon', 'Fighting'],
-            halfDamage: ['Dragon', 'Electric', 'Grass'],
+            halfDamage: ['Fire', 'Poison', 'Steel'],
+            noEffect: [],
         },
         defense: {
             supereffective: ['Poison', 'Steel'],
@@ -64,6 +69,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Dark', 'Ice', 'Normal', 'Rock', 'Steel'],
             halfDamage: ['Bug', 'Fairy', 'Flying', 'Poison', 'Psychic'],
+            noEffect: ['Ghost'],
         },
         defense: {
             supereffective: ['Fairy', 'Flying', 'Psychic'],
@@ -76,6 +82,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Bug', 'Grass', 'Ice', 'Steel'],
             halfDamage: ['Dragon', 'Fire', 'Rock', 'Water'],
+            noEffect: [],
         },
         defense: {
             supereffective: ['Ground', 'Rock', 'Water'],
@@ -88,6 +95,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Bug', 'Fighting', 'Grass'],
             halfDamage: ['Electric', 'Rock', 'Steel'],
+            noEffect: [],
         },
         defense: {
             supereffective: ['Electric', 'Ice', 'Rock'],
@@ -100,6 +108,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Ghost', 'Psychic'],
             halfDamage: ['Dark'],
+            noEffect: ['Normal'],
         },
         defense: {
             supereffective: ['Dark','Ghost'],
@@ -111,7 +120,8 @@ const pokeTyping = {
         color: '#7AC74C',
         offense: {
             supereffective: ['Ground', 'Rock', 'Water'],
-            halfDamage: ['Bug', 'Fire', 'Flying', 'Grass', 'Poison', 'Steel'],
+            halfDamage: ['Bug', 'Fire', 'Flying', 'Grass', 'Poison', 'Steel', 'Dragon'],
+            noEffect: [],
         },
         defense: {
             supereffective: ['Bug', 'Fire', 'Flying', 'Ice', 'Poison'],
@@ -124,6 +134,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Electric', 'Fire', 'Poison', 'Rock', 'Steel'],
             halfDamage: ['Bug', 'Grass'],
+            noEffect: ['Flying'],
         },
         defense: {
             supereffective: ['Grass', 'Ice', 'Water'],
@@ -136,6 +147,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Dragon', 'Flying', 'Grass', 'Ground'],
             halfDamage: ['Fire', 'Ice', 'Steel', 'Water'],
+            noEffect: [],
         },
         defense: {
             supereffective: ['Fighting', 'Fire', 'Rock', 'Steel'],
@@ -149,6 +161,7 @@ const pokeTyping = {
         offense: {
             supereffective: [],
             halfDamage: ['Rock', 'Steel'],
+            noEffect: ['Ghost'],
         },
         defense: {
             supereffective: ['Fighting'],
@@ -161,6 +174,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Fairy', 'Grass'],
             halfDamage: ['Poison', 'Ghost', 'Ground', 'Rock'],
+            noEffect: ['Steel'],
         },
         defense: {
             supereffective: ['Ground', 'Psychic'],
@@ -173,6 +187,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Fighting', 'Poison'],
             halfDamage: ['Steel', 'Psychic'],
+            noEffect: ['Dark'],
         },
         defense: {
             supereffective: ['Bug', 'Dark', 'Ghost'],
@@ -185,6 +200,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Bug', 'Fire', 'Flying', 'Ice'],
             halfDamage: ['Fighting', 'Ground', 'Steel'],
+            noEffect: [],
         },
         defense: {
             supereffective: ['Fighting', 'Grass', 'Ground', 'Steel', 'Water'],
@@ -197,6 +213,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Fairy', 'Ice', 'Rock'],
             halfDamage: ['Electric', 'Fire', 'Steel', 'Water'],
+            noEffect: [],
         },
         defense: {
             supereffective: ['Fighting', 'Fire', 'Ground'],
@@ -209,6 +226,7 @@ const pokeTyping = {
         offense: {
             supereffective: ['Fire', 'Ground', 'Rock'],
             halfDamage: ['Dragon', 'Grass', 'Water'],
+            noEffect: [],
         },
         defense: {
             supereffective: ['Electric', 'Grass'],
