@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Matthew Logan">
+    <meta name="description" content="Pokemon weakness helper using PokeAPI">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Pokemon, Brilliant Diamond, Shining Pearl, Junior Developer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pokemon Type Helper</title>
@@ -18,9 +21,9 @@
             <div id="searchMode">
                 <div>
                     <input type="text" id="searchBar" placeholder="Pokemon...">
-                    <button for="searchBar" id="searchBarButt"><i class="bi bi-search"></i></button>
+                    <button for="searchBar" id="searchBarButt" aria-label="search"><i class="bi bi-search"></i></button>
                 </div>
-                <button class="toggleType">Mode</button>
+                <button class="toggleType" aria-label="changeMode">Mode</button>
             </div>
             <div id="manualMode">
                 <div>
@@ -30,9 +33,9 @@
                     <select name="type2" id="typeTwo">
                         <option value="none">none</option>
                     </select>
-                    <button id="manualButt"><i class="bi bi-search"></i></button>
+                    <button id="manualButt" aria-label="search"><i class="bi bi-search"></i></button>
                 </div>
-                <button class="toggleType">Mode</button>
+                <button class="toggleType" aria-label="changeMode">Mode</button>
             </div>
         </div>
         <div class="main">
